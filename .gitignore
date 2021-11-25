@@ -1,2 +1,5 @@
 venv
-__pycahe__
+__pycache__/
+*.pyc
+.DS_Store
+Doro.egg-info
