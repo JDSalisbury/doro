@@ -5,7 +5,6 @@ charset-normalizer==2.0.8
 click==8.0.3
 colorama==0.4.4
 docutils==0.18.1
--e git+https://github.com/JDSalisbury/doro.git@f47c825c3f04d69c81d89463713ddece4ce8ba42#egg=Doro
 idna==3.3
 importlib-metadata==4.8.2
 keyring==23.3.0
