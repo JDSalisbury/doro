@@ -4,6 +4,44 @@ from playsound import playsound
 from app.timer import Timer
 
 
+def start_session(_s, short_breaks, focus):
+    t = Timer()
+    t.start()
+    click.echo(f"Starting work Session {_s +1} of {short_breaks}")
+    while t.current_time() < focus:
+        print("Focus...")
+        time.sleep(1)
+    t.stop()
+
+
+def short_break(_s, short_breaks, short):
+    bk = Timer()
+    bk.start()
+    playsound('./app/valarm.mp3')
+    while bk.current_time() < short:
+        print("Take a short break!")
+        time.sleep(1)
+    if (_s + 1) != short_breaks:
+        playsound('./app/startBeep.mp3')
+    bk.stop()
+
+
+def long_break(_l, long_breaks, long):
+    click.echo(f'Starting long break! {_l +1} of {long_breaks}')
+    lb = Timer()
+    lb.start()
+    while lb.current_time() < long:
+        print("Take a long break!")
+    if (_l+1) != long_breaks:
+        playsound('./app/startBeep.mp3')
+    lb.stop()
+
+
+def completed():
+    click.echo("Pomodoro Completed")
+    playsound('./app/falarm.mp')
+
+
 @click.group()
 def cli():
     pass
@@ -25,35 +63,13 @@ def custom(focus, short, long, breaks):
     for _l in range(long_breaks):
         for _s in range(short_breaks):
 
-            t = Timer()
-            t.start()
-            click.echo(f"Starting work Session {_s +1} of {short_breaks}")
-            while t.current_time() < focus:
-                print("Focus...")
-                time.sleep(1)
-            t.stop()
+            start_session(_s, short_breaks, focus)
 
-            bk = Timer()
-            bk.start()
-            playsound('./app/valarm.mp3')
-            while bk.current_time() < short:
-                print("Take a short break!")
-                time.sleep(1)
-            if (_s + 1) != short_breaks:
-                playsound('./app/startBeep.mp3')
-            bk.stop()
+            short_break(_s, short_breaks, short)
 
-        click.echo(f'Starting long break! {_l +1} of {long_breaks}')
-        lb = Timer()
-        lb.start()
-        while lb.current_time() < long:
-            print("Take a long break!")
-        if (_l+1) != long_breaks:
-            playsound('./app/startBeep.mp3')
-        lb.stop()
+        long_break(_l, long_breaks, long)
 
-    click.echo("Pomodoro Completed")
-    playsound('./app/falarm.mp')
+    completed()
 
 
 @cli.command()
@@ -67,32 +83,10 @@ def start(breaks):
     for _l in range(long_breaks):
         for _s in range(short_breaks):
 
-            t = Timer()
-            t.start()
-            click.echo(f"Starting work Session {_s +1} of {short_breaks}")
-            while t.current_time() < twenty_five_min:
-                print("Focus...")
-                time.sleep(1)
-            t.stop()
+            start_session(_s, short_breaks, twenty_five_min)
 
-            bk = Timer()
-            bk.start()
-            playsound('./app/valarm.mp3')
-            while bk.current_time() < five_min:
-                print("Take a short break!")
-                time.sleep(1)
-            if (_s + 1) != short_breaks:
-                playsound('./app/startBeep.mp3')
-            bk.stop()
+            short_break(_s, short_breaks, five_min)
 
-        click.echo(f'Starting long break! {_l +1} of {long_breaks}')
-        lb = Timer()
-        lb.start()
-        while lb.current_time() < twenty_five_min:
-            print("Take a long break!")
-        if (_l+1) != long_breaks:
-            playsound('./app/startBeep.mp3')
-        lb.stop()
+        long_break(_l, long_breaks, twenty_five_min)
 
-    click.echo("Pomodoro Completed")
-    playsound('./app/falarm.mp')
+    completed()
