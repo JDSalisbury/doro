@@ -12,18 +12,16 @@ setup(
     author='Jeff Salisbury',
     author_email='salisbury.jeffery@gmail.com',
     license='MIT',
-    description='Pomodoro Timer for programming dope shit.',
+    description='CLI Pomodoro Timer',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/JDSalisbury/doro',
-    py_modules=['my_tool', 'app'],
+    py_modules=['timer.py', 'app'],
     packages=find_packages(),
     install_requires=[requirements],
     python_requires='>=3.7',
-    classifiers=[
-        'Programing Language :: Python :: 3.8',
-        "Operating System :: OS independent",
-    ],
+    classifiers=["Programming Language :: Python :: 3.8",
+                 "Operating System :: OS Independent"],
     entry_points='''
         [console_scripts]
         doro=timer:cli
