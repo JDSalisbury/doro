@@ -1,4 +1,4 @@
-Doro - CLI pomodoro timer.
+Pmdr - CLI pomodoro timer.
 
 The following command:
 
@@ -30,6 +30,12 @@ The following flags can be used to build your own custom pomodoro timer setup.
 -s --short # Break time after every Focus time, default 5min
 -l --long # Long break, default 25min
 -bs --breaks # Number of long breaks to take, default 4
+```
+
+You can also set a countdown timer with the following command:
+
+```
+doro countdown
 ```
 
 Create your own CLI tools: [Tutorial](https://medium.com/nerd-for-tech/how-to-build-and-distribute-a-cli-tool-with-python-537ae41d9d78)

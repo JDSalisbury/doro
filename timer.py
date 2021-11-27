@@ -90,3 +90,15 @@ def start(breaks):
         long_break(_l, long_breaks, twenty_five_min)
 
     completed()
+
+
+@cli.command()
+@click.option('-m', '--minutes', default='30', help='Number of minutes')
+def countdown(minutes):
+    t = Timer()
+    t.start()
+    while t.current_time() < int(minutes)*60:
+        click.echo('Counting down...')
+        time.sleep(1)
+    t.stop()
+    playsound('./app/falarm.mp')

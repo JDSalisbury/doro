@@ -7,3 +7,4 @@ Doro.egg-info
 *.gz
 build/
 dist/
+*.egg-info
