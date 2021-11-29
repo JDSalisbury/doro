@@ -4,37 +4,32 @@ from playsound import playsound
 from app.timer import Timer
 
 
-def start_session(_s, short_breaks, focus):
+def run_timer(minutes, msg):
     t = Timer()
     t.start()
-    click.echo(f"Starting work Session {_s +1} of {short_breaks}")
-    while t.current_time() < focus:
-        print("Focus...")
+    while t.current_time() < minutes:
+        click.echo(msg)
         time.sleep(1)
     t.stop()
 
 
+def start_session(_s, short_breaks, focus):
+    click.echo(f"Starting work Session {_s +1} of {short_breaks}")
+    run_timer(focus, "Focus...")
+
+
 def short_break(_s, short_breaks, short):
-    bk = Timer()
-    bk.start()
     playsound('./app/valarm.mp3')
-    while bk.current_time() < short:
-        print("Take a short break!")
-        time.sleep(1)
+    run_timer(short, "Take a short break!")
     if (_s + 1) != short_breaks:
         playsound('./app/startBeep.mp3')
-    bk.stop()
 
 
 def long_break(_l, long_breaks, long):
     click.echo(f'Starting long break! {_l +1} of {long_breaks}')
-    lb = Timer()
-    lb.start()
-    while lb.current_time() < long:
-        print("Take a long break!")
+    run_timer(long, "Take a long break!")
     if (_l+1) != long_breaks:
         playsound('./app/startBeep.mp3')
-    lb.stop()
 
 
 def completed():
@@ -94,11 +89,6 @@ def start(breaks):
 
 @cli.command()
 @click.option('-m', '--minutes', default='30', help='Number of minutes')
-def countdown(minutes):
-    t = Timer()
-    t.start()
-    while t.current_time() < int(minutes)*60:
-        click.echo('Counting down...')
-        time.sleep(1)
-    t.stop()
+def timer(minutes):
+    run_timer(int(minutes)*60, 'Counting down...')
     playsound('./app/falarm.mp')

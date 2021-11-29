@@ -32,10 +32,10 @@ The following flags can be used to build your own custom pomodoro timer setup.
 -bs --breaks # Number of long breaks to take, default 4
 ```
 
-You can also set a countdown timer with the following command:
+You can also set a timer with the following command:
 
 ```
-doro countdown
+doro timer -m --minutes
 ```
 
 Create your own CLI tools: [Tutorial](https://medium.com/nerd-for-tech/how-to-build-and-distribute-a-cli-tool-with-python-537ae41d9d78)
