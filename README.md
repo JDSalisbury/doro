@@ -10,7 +10,7 @@ Will give you a classic Pomodoro timer with 4 Pomodoros(25min of Focus followed 
 
 With the following command:
 
-```
+```cmd
 doro start -bs --breaks
 ```
 
@@ -18,23 +18,31 @@ You can set the number of long breaks needed to complete your tasks!
 
 The following Command:
 
-```
+```cmd
 doro custom
 ```
 
 Can be used to build out your own timer how you see fit.
 The following flags can be used to build your own custom pomodoro timer setup.
 
-```
+```python
 -f --focus # Focus time, default 25min
 -s --short # Break time after every Focus time, default 5min
 -l --long # Long break, default 25min
 -bs --breaks # Number of long breaks to take, default 4
 ```
 
-You can also set a timer with the following command:
+Pmdr also comes with a few quick timers for ease of use:
 
+```python
+doro hour # minute timer
+
+doro half # 30 minute timer
 ```
+
+You can also set a custom timer with the following command:
+
+```cmd
 doro timer -m --minutes
 ```
 
