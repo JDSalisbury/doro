@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name='Pmdr',
-    version='0.0.4',
+    version='0.0.5',
     author='Jeff Salisbury',
     author_email='salisbury.jeffery@gmail.com',
     license='MIT',
@@ -24,6 +24,6 @@ setup(
                  "Operating System :: OS Independent"],
     entry_points='''
         [console_scripts]
-        doro=timer:cli
+        pmdr=timer:cli
     '''
 )
