@@ -19,20 +19,20 @@ def start_session(_s, short_breaks, focus):
 
 
 def short_break(_s, short_breaks, short):
-    playsound('./alarms/valarm.mp3')
+    playsound('app/valarm.mp3')
     click.echo(f'Starting long break! {_s +1} of {short_breaks}')
     run_timer(short, "Take a short break!")
     if (_s + 1) != short_breaks:
-        playsound('./alarms/startBeep.mp3')
+        playsound('app/startBeep.mp3')
 
 
 def long_break(_l, long_breaks, long):
     click.echo(f'Starting long break! {_l +1} of {long_breaks}')
     run_timer(long, "Take a long break!")
     if (_l+1) != long_breaks:
-        playsound('./alarms/startBeep.mp3')
+        playsound('app/startBeep.mp3')
 
 
 def completed():
     click.echo("Doro Completed")
-    playsound('./alarms/falarm.mp')
+    playsound('app/valarm.mp3')
