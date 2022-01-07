@@ -1,6 +1,6 @@
 import click
 import time
-from app.timer import Timer
+from pmdr.timer import Timer
 from playsound import playsound
 
 # cwd = os.getcwd()
