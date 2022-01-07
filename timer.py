@@ -55,17 +55,17 @@ def start(breaks):
 @cli.command()
 @click.option('-m', '--minutes', default='30', help='Number of minutes')
 def timer(minutes):
-    run_timer(int(minutes)*60, 'Counting down...')
+    run_timer(int(minutes)*60, 'Timer Running...')
     completed()
 
 
 @cli.command()
 def hour():
-    run_timer(60*60, 'Counting down...')
+    run_timer(60*60, 'Timer Running...')
     completed()
 
 
 @cli.command()
 def half():
-    run_timer(30*60, 'Counting down...')
+    run_timer(30*60, 'Timer Running...')
     completed()

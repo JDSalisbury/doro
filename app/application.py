@@ -8,7 +8,7 @@ def run_timer(minutes, msg):
     t = Timer()
     t.start()
     while t.current_time() < minutes:
-        click.echo(msg)
+        click.echo(f"{int(t.current_time())}: {msg}")
         time.sleep(1)
     t.stop()
 
