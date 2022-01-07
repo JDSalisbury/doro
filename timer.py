@@ -1,5 +1,5 @@
 import click
-from app.application import run_timer, start_session, short_break, long_break, completed
+from pmdr.application import run_timer, start_session, short_break, long_break, completed
 
 
 @click.group()
