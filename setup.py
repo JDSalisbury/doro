@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name='Pmdr',
-    version='1.0.1',
+    version='1.0.2',
     author='Jeff Salisbury',
     author_email='salisbury.jeffery@gmail.com',
     license='MIT',
