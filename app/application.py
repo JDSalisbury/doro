@@ -3,9 +3,11 @@ import time
 from app.timer import Timer
 from playsound import playsound
 
-SHORT_ALARM = 'app/sbalarm.mp3'
-START_ALARM = 'app/stalarm.mp3'
-END_ALARM = 'app/endalarm.mp3'
+# cwd = os.getcwd()
+# print(__file__[:-14])
+SHORT_ALARM = f'{__file__[:-14]}sbalarm.mp3'
+START_ALARM = f'{__file__[:-14]}stalarm.mp3'
+END_ALARM = f'{__file__[:-14]}endalarm.mp3'
 
 
 def run_timer(minutes, msg):
