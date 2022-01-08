@@ -16,7 +16,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/JDSalisbury/doro',
-    data_files=[('pmdr', ['endalarm.mp3', 'sbalarm.mp3', 'stalarm.mp3'])],
+    data_files=[
+        ('pmdr', ['pmdr/endalarm.mp3', 'pmdr/sbalarm.mp3', 'pmdr/stalarm.mp3'])],
     include_package_data=True,
     py_modules=['timer', 'pmdr'],
     packages=find_packages(),

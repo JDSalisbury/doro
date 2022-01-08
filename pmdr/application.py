@@ -26,7 +26,7 @@ def start_session(_s, short_breaks, focus):
 
 def short_break(_s, short_breaks, short):
     playsound(SHORT_ALARM)
-    click.echo(f'Starting long break! {_s +1} of {short_breaks}')
+    click.echo(f'Starting short break! {_s +1} of {short_breaks}')
     run_timer(short, "Take a short break!")
     if (_s + 1) != short_breaks:
         playsound(START_ALARM)
